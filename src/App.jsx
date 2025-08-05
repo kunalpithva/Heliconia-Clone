@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, BrowserRouter, Link } from 'react-router-dom';
 import HorizontalScroll from './components/HorizontalScroll';
 import { motion } from "motion/react";
 import { useState, useEffect, useRef} from 'react';
@@ -53,8 +53,7 @@ const App = () => {
 ];
  
   return (
-    <Router>
-   
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home1 />} /> 
         <Route path="/home1" element={<Home1/>} />
@@ -62,7 +61,7 @@ const App = () => {
         <Route path="/Blog" element={<Blog />} />
         <Route path="/About1" element={<About1/>} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 };
 
@@ -1302,7 +1301,7 @@ function Navbarr({ className }) {
       
       <Menu setActive={setActive}>
       <div className=" flex items-center justify-center  ">
-      <a href="/home1"  ><img src="/Screenshot 2025-05-26 104540.png" alt="Logo" className="logo ml-200 mr-10 h-13 w-13 " /></a>
+      <Link to={"/home1"}  ><img src="/Screenshot 2025-05-26 104540.png" alt="Logo" className="logo ml-200 mr-10 h-13 w-13 " /></Link>
       </div>
         <h2 className=" flex items-center justify-center text-4xl font-bold font-mono text-blue-500 mr-10"> Heliconia</h2>
         <div className="flex flex-row gap-6 text-xl pr-200">
@@ -1686,9 +1685,9 @@ function Navbarr({ className }) {
           </MenuItem>
           <div className="flex flex-row gap-6">
             <div className="flex flex-row gap-6">
-                  <a href="/About1"><h2 className='font-normal text-black'>About</h2></a>
-                  <a href="/Blog"><h2 className='font-normal text-black'>Blog</h2></a>
-                  <a href="/contact1"><h2 className='font-normal text-black'>Contact</h2></a>
+                  <Link to={"/About1"}><h2 className='font-normal text-black'>About</h2></Link>
+                  <Link to={"/Blog"}><h2 className='font-normal text-black'>Blog</h2></Link>
+                  <Link to={"/contact1"}><h2 className='font-normal text-black'>Contact</h2></Link>
             </div>
             <div className="ml-80 flex items-center justify-center gap-6">
               <a href="/">
